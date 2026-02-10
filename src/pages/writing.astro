@@ -53,21 +53,21 @@ const categories = [...new Set(allPosts.map(p => p.category))];
   <div class="space-y-12">
     <!-- Header -->
     <section class="pt-4">
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">Writing</h1>
-      <p class="text-lg text-gray-600 max-w-2xl">
+      <h1 class="text-4xl font-bold text-gray-100 mb-4">Writing</h1>
+      <p class="text-lg text-gray-400 max-w-2xl">
         Thoughts on technology, crypto, and building things. I write about what I'm learning and working on.
       </p>
     </section>
 
     <!-- Category Filter -->
-    <div class="flex gap-3 pb-6 border-b border-gray-200">
-      <a href="/writing" class="px-4 py-2 bg-gray-900 text-white rounded-lg text-sm font-medium">
+    <div class="flex gap-3 pb-6 border-b border-gray-800">
+      <a href="/writing" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-sm font-medium transition-colors">
         All
       </a>
       {categories.map((category) => (
         <a
           href={`/writing?category=${encodeURIComponent(category)}`}
-          class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg text-sm font-medium transition-colors"
+          class="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-lg text-sm font-medium transition-colors"
         >
           {category}
         </a>
@@ -84,7 +84,7 @@ const categories = [...new Set(allPosts.map(p => p.category))];
               <span>•</span>
               <span>{post.readTime}</span>
               <span>•</span>
-              <span class="px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-xs">
+              <span class="px-2 py-0.5 bg-gray-800 text-gray-400 rounded text-xs">
                 {post.category}
               </span>
             </div>
@@ -93,17 +93,17 @@ const categories = [...new Set(allPosts.map(p => p.category))];
               href={`/blog/${post.slug}`}
               class="block group-hover:translate-x-1 transition-transform"
             >
-              <h2 class="text-2xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors mb-2">
+              <h2 class="text-2xl font-semibold text-gray-100 group-hover:text-blue-400 transition-colors mb-2">
                 {post.title}
               </h2>
-              <p class="text-gray-600 leading-relaxed">
+              <p class="text-gray-400 leading-relaxed">
                 {post.excerpt}
               </p>
             </a>
 
             <a
               href={`/blog/${post.slug}`}
-              class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm"
+              class="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium text-sm"
             >
               Read more →
             </a>
@@ -113,21 +113,21 @@ const categories = [...new Set(allPosts.map(p => p.category))];
     </div>
 
     <!-- Newsletter CTA (optional) -->
-    <section class="mt-16 pt-12 border-t border-gray-200">
-      <div class="bg-gray-50 rounded-lg p-8">
-        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Stay Updated</h3>
-        <p class="text-gray-600 mb-6 max-w-xl">
+    <section class="mt-16 pt-12 border-t border-gray-800">
+      <div class="bg-gray-900 border border-gray-800 rounded-lg p-8">
+        <h3 class="text-2xl font-semibold text-gray-100 mb-3">Stay Updated</h3>
+        <p class="text-gray-400 mb-6 max-w-xl">
           Get notified when I publish new articles. No spam, unsubscribe anytime.
         </p>
         <form class="flex gap-3 max-w-md">
           <input
             type="email"
             placeholder="your@email.com"
-            class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 text-gray-200 placeholder-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button
             type="submit"
-            class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+            class="px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg transition-colors"
           >
             Subscribe
           </button>

@@ -1,45 +1,46 @@
 @import "tailwindcss";
 
-/* Typography improvements for readability */
+/* Typography improvements for readability - Dark Mode */
 @layer base {
   h1 {
-    @apply text-4xl font-bold text-gray-900 leading-tight;
+    @apply text-4xl font-bold text-gray-100 leading-tight;
   }
 
   h2 {
-    @apply text-3xl font-semibold text-gray-900 mt-12 mb-4;
+    @apply text-3xl font-semibold text-gray-200 mt-12 mb-4;
   }
 
   h3 {
-    @apply text-2xl font-semibold text-gray-900 mt-8 mb-3;
+    @apply text-2xl font-semibold text-gray-200 mt-8 mb-3;
   }
 
   p {
-    @apply text-gray-700 leading-relaxed mb-4;
+    @apply text-gray-300 leading-relaxed mb-4;
   }
 
   a {
-    @apply text-blue-600 hover:text-blue-800 transition-colors;
+    @apply text-blue-400 hover:text-blue-300 transition-colors;
   }
 
   code {
-    @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono;
+    @apply bg-gray-800 px-1.5 py-0.5 rounded text-sm text-blue-300;
+    font-family: 'JetBrains Mono', monospace;
   }
 
   pre {
-    @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto my-6;
+    @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto my-6 border border-gray-800;
   }
 
   pre code {
-    @apply bg-transparent p-0;
+    @apply bg-transparent p-0 text-gray-100;
   }
 
   blockquote {
-    @apply border-l-4 border-gray-300 pl-4 italic text-gray-700 my-6;
+    @apply border-l-4 border-blue-500 pl-4 italic text-gray-400 my-6 bg-gray-900/50 py-2;
   }
 
   ul, ol {
-    @apply ml-6 mb-4 text-gray-700;
+    @apply ml-6 mb-4 text-gray-300;
   }
 
   li {
@@ -54,9 +55,17 @@
 }
 
 .prose p {
-  @apply mb-6;
+  @apply mb-6 text-gray-300;
 }
 
 .prose img {
-  @apply my-8 rounded-lg;
+  @apply my-8 rounded-lg border border-gray-800;
+}
+
+.prose a {
+  @apply text-blue-400 hover:text-blue-300 underline decoration-blue-500/30 underline-offset-4;
+}
+
+.prose strong {
+  @apply text-gray-100 font-semibold;
 }
