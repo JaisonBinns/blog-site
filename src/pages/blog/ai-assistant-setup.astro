@@ -1,0 +1,109 @@
+---
+import BlogPost from '../../layouts/BlogPost.astro';
+---
+
+<BlogPost
+  title="Getting Started with AI Assistants"
+  description="How I built my own personal AI assistant that runs 24/7 and helps me stay organized."
+  date="Feb 10, 2026"
+  category="Tech & AI"
+  readTime="8 min read"
+>
+  <p>
+    I've always been fascinated by the idea of having a personal AI assistant—something that could
+    help me stay organized, automate tedious tasks, and act as a second brain. After exploring
+    various options, I decided to build my own using Claude AI and some custom integrations.
+  </p>
+
+  <h2>Why Build Your Own?</h2>
+
+  <p>
+    While there are plenty of AI assistants available (Siri, Alexa, Google Assistant), none of them
+    offered the level of customization and control I wanted. I needed something that could:
+  </p>
+
+  <ul>
+    <li>Run 24/7 on my own infrastructure</li>
+    <li>Integrate with my specific tools and workflows</li>
+    <li>Access my private data without sending it to third parties</li>
+    <li>Be customized exactly to my needs</li>
+  </ul>
+
+  <h2>The Stack</h2>
+
+  <p>Here's what I used to build this:</p>
+
+  <ul>
+    <li><strong>Claude AI</strong> - The brain of the operation</li>
+    <li><strong>Node.js</strong> - Backend runtime</li>
+    <li><strong>Telegram/WhatsApp</strong> - Communication interface</li>
+    <li><strong>Docker</strong> - Containerization for security</li>
+    <li><strong>Raspberry Pi</strong> - Always-on hosting (optional)</li>
+  </ul>
+
+  <h2>Key Features</h2>
+
+  <h3>Scheduled Tasks</h3>
+
+  <p>
+    The assistant can run recurring tasks on a schedule. For example, I have it check specific
+    subreddits twice daily for interesting deals and send me notifications when something good
+    pops up.
+  </p>
+
+  <h3>News Digests</h3>
+
+  <p>
+    Every morning at 8 AM, I get a curated digest of tech and crypto news from Hacker News, Reddit,
+    and other sources. It's filtered to show only high-signal content that I actually care about.
+  </p>
+
+  <h3>Note Summarization</h3>
+
+  <p>
+    I take a lot of notes throughout the week in Obsidian. The assistant can summarize these notes
+    and help me turn them into blog posts or identify patterns in my thinking.
+  </p>
+
+  <h2>What I Learned</h2>
+
+  <p>
+    Building this project taught me a lot about AI integration, system design, and automation.
+    The key insight: <strong>start simple and iterate</strong>. Don't try to build everything at once.
+  </p>
+
+  <p>
+    I started with just basic message handling and gradually added features as I identified needs.
+    This incremental approach made the project manageable and kept me motivated.
+  </p>
+
+  <h2>Next Steps</h2>
+
+  <p>
+    I'm planning to add more integrations:
+  </p>
+
+  <ul>
+    <li>Gmail integration for email management</li>
+    <li>Calendar sync for scheduling</li>
+    <li>Web scraping for competitive research</li>
+    <li>Voice note transcription</li>
+  </ul>
+
+  <p>
+    If you're interested in building your own AI assistant, I highly recommend starting with a
+    simple use case and expanding from there. The future of personal AI is exciting, and there's
+    never been a better time to experiment.
+  </p>
+
+  <blockquote>
+    <p>
+      "The best way to predict the future is to invent it." - Alan Kay
+    </p>
+  </blockquote>
+
+  <p>
+    Feel free to reach out if you have questions about the setup or want to discuss AI assistants
+    in general!
+  </p>
+</BlogPost>

@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* Typography improvements for readability */
+@layer base {
+  h1 {
+    @apply text-4xl font-bold text-gray-900 leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold text-gray-900 mt-12 mb-4;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold text-gray-900 mt-8 mb-3;
+  }
+
+  p {
+    @apply text-gray-700 leading-relaxed mb-4;
+  }
+
+  a {
+    @apply text-blue-600 hover:text-blue-800 transition-colors;
+  }
+
+  code {
+    @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  pre {
+    @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto my-6;
+  }
+
+  pre code {
+    @apply bg-transparent p-0;
+  }
+
+  blockquote {
+    @apply border-l-4 border-gray-300 pl-4 italic text-gray-700 my-6;
+  }
+
+  ul, ol {
+    @apply ml-6 mb-4 text-gray-700;
+  }
+
+  li {
+    @apply mb-2;
+  }
+}
+
+/* Reading experience */
+.prose {
+  @apply text-lg leading-relaxed;
+  max-width: 65ch;
+}
+
+.prose p {
+  @apply mb-6;
+}
+
+.prose img {
+  @apply my-8 rounded-lg;
+}
