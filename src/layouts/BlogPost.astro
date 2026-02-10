@@ -13,9 +13,9 @@ const { title, description, date, category, readTime = "5 min read" } = Astro.pr
 ---
 
 <BaseLayout title={title} description={description}>
-  <article class="prose max-w-none">
+  <article class="prose max-w-none px-4 sm:px-0">
     <!-- Header -->
-    <header class="mb-12 pb-8 border-b border-gray-200">
+    <header class="mb-12 pb-8 border-b border-gray-200 max-w-3xl mx-auto">
       <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
         <time>{date}</time>
         <span>•</span>
@@ -36,12 +36,12 @@ const { title, description, date, category, readTime = "5 min read" } = Astro.pr
     </header>
 
     <!-- Content -->
-    <div class="prose-lg">
+    <div class="prose-lg max-w-3xl mx-auto">
       <slot />
     </div>
 
     <!-- Footer -->
-    <footer class="mt-16 pt-8 border-t border-gray-200">
+    <footer class="mt-16 pt-8 border-t border-gray-200 max-w-3xl mx-auto">
       <div class="flex items-center justify-between">
         <a
           href="/writing"
