@@ -12,51 +12,76 @@ interface Props {
 const { title, description, date, category, readTime = "5 min read" } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
-  <article class="prose max-w-none px-4 sm:px-0">
-    <!-- Header -->
-    <header class="mb-12 pb-8 max-w-3xl mx-auto" style="border-bottom: 1px solid var(--border);">
-      <div class="flex items-center gap-4 text-sm mb-4" style="color: var(--text-muted);">
+<BaseLayout title={`${title} — Jaison`} description={description}>
+  <article class="post">
+    <header class="post-header">
+      <div class="post-meta">
         <time>{date}</time>
-        <span>•</span>
+        <span>&middot;</span>
         <span>{readTime}</span>
-        <span>•</span>
-        <span class="px-2 py-0.5 rounded text-xs" style="background: var(--tag-bg); color: var(--tag-text);">
-          {category}
-        </span>
       </div>
 
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight" style="color: var(--text-primary);">
-        {title}
-      </h1>
+      <h1>{title}</h1>
 
-      <p class="text-xl leading-relaxed" style="color: var(--text-body);">
-        {description}
-      </p>
+      <p class="post-desc">{description}</p>
     </header>
 
-    <!-- Content -->
-    <div class="prose-lg max-w-3xl mx-auto">
+    <div class="post-body prose">
       <slot />
     </div>
 
-    <!-- Footer -->
-    <footer class="mt-16 pt-8 max-w-3xl mx-auto" style="border-top: 1px solid var(--border);">
-      <div class="flex items-center justify-between">
-        <a
-          href="/writing"
-          class="font-medium transition-colors"
-          style="color: var(--accent);"
-        >
-          ← Back to all posts
-        </a>
-
-        <div class="flex gap-4 text-sm" style="color: var(--text-muted);">
-          <a href="https://twitter.com/share?url={Astro.url}" class="transition-colors" style="color: var(--text-muted);">
-            Share on Twitter
-          </a>
-        </div>
-      </div>
+    <footer class="post-footer">
+      <a href="/writing">&larr; All writing</a>
     </footer>
   </article>
 </BaseLayout>
+
+<style>
+  .post-header {
+    padding: 1rem 0 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .post-header h1 {
+    margin-bottom: 0.75rem;
+    line-height: 1.15;
+  }
+
+  .post-desc {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    max-width: 560px;
+  }
+
+  .post-body {
+    max-width: none;
+  }
+
+  .post-footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .post-footer a {
+    font-size: 0.88rem;
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .post-footer a:hover {
+    color: var(--accent-hover);
+  }
+</style>

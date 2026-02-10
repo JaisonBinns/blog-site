@@ -1,36 +1,44 @@
 @import "tailwindcss";
 
-/* Hojicha & Matcha Theme */
 @layer base {
   h1 {
     font-family: 'Instrument Serif', serif;
-    @apply text-4xl font-normal leading-tight;
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.1;
     color: var(--text-primary);
     letter-spacing: -0.02em;
   }
 
   h2 {
     font-family: 'Instrument Serif', serif;
-    @apply text-3xl font-normal mt-12 mb-4;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 400;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
     color: var(--text-primary);
     letter-spacing: -0.01em;
   }
 
   h3 {
     font-family: 'Instrument Serif', serif;
-    @apply text-2xl font-normal mt-8 mb-3;
+    font-size: 1.35rem;
+    font-weight: 400;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
     color: var(--text-primary);
   }
 
   p {
     color: var(--text-body);
-    @apply leading-relaxed mb-4;
+    line-height: 1.7;
+    margin-bottom: 1rem;
     font-weight: 300;
   }
 
   a {
     color: var(--accent);
-    @apply transition-colors;
+    transition: color 0.3s;
   }
 
   a:hover {
@@ -38,60 +46,72 @@
   }
 
   code {
-    background: var(--tag-bg);
+    background: var(--code-bg);
     color: var(--accent);
-    @apply px-1.5 py-0.5 rounded text-sm;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.88em;
     font-family: 'JetBrains Mono', monospace;
   }
 
   pre {
     background: var(--bg-secondary);
     color: var(--text-body);
-    @apply p-4 rounded-lg overflow-x-auto my-6;
+    padding: 1.25rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
     border: 1px solid var(--border);
+    transition: background var(--transition), border var(--transition);
   }
 
   pre code {
-    @apply bg-transparent p-0;
+    background: transparent;
+    padding: 0;
     color: var(--text-body);
   }
 
   blockquote {
-    border-left: 4px solid var(--accent);
+    border-left: 3px solid var(--accent);
     color: var(--text-muted);
-    @apply pl-4 italic my-6 py-2;
-    background: var(--tag-bg);
+    padding-left: 1.25rem;
+    font-style: italic;
+    margin: 1.5rem 0;
   }
 
   ul, ol {
     color: var(--text-body);
-    @apply ml-6 mb-4;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   li {
-    @apply mb-2;
+    margin-bottom: 0.4rem;
   }
 }
 
 /* Reading experience */
 .prose {
-  @apply text-lg leading-relaxed;
+  font-size: 1.05rem;
+  line-height: 1.75;
   max-width: 65ch;
 }
 
 .prose p {
-  @apply mb-6;
+  margin-bottom: 1.5rem;
   color: var(--text-body);
 }
 
 .prose img {
-  @apply my-8 rounded-lg;
+  margin: 2rem 0;
+  border-radius: 8px;
   border: 1px solid var(--border);
 }
 
 .prose a {
   color: var(--accent);
-  @apply underline underline-offset-4;
+  text-decoration: underline;
+  text-underline-offset: 3px;
   text-decoration-color: rgba(59, 122, 51, 0.3);
 }
 
@@ -101,5 +121,5 @@
 
 .prose strong {
   color: var(--text-primary);
-  @apply font-semibold;
+  font-weight: 500;
 }

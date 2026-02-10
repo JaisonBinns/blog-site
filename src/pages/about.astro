@@ -3,109 +3,95 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/global.css';
 ---
 
-<BaseLayout title="About" description="About me and what I do">
-  <div class="space-y-12 prose max-w-none">
-    <section class="pt-4">
-      <h1>About Me</h1>
-
-      <p class="text-xl" style="color: var(--text-body);">
-        Hi! I'm Jaison, and I build things with code.
-      </p>
-    </section>
-
-    <section class="space-y-6">
-      <h2>What I Do</h2>
+<BaseLayout title="About — Jaison" description="About me and what I do">
+  <div class="about prose">
+    <section>
+      <h1>About</h1>
 
       <p>
-        I'm passionate about using technology to solve real problems. My interests span across
-        artificial intelligence, cryptocurrency, automation, and building products that people love.
+        I'm Jaison. I build things with code and write about it here.
       </p>
 
       <p>
-        Currently, I'm exploring how AI can augment human capabilities, particularly in areas like
-        personal productivity, decision-making, and creative work. I also follow the crypto space
-        closely, especially developments in decentralized finance and Web3 infrastructure.
-      </p>
-    </section>
-
-    <section class="space-y-6">
-      <h2>What I Write About</h2>
-
-      <ul class="space-y-3">
-        <li>
-          <strong>Tech & AI:</strong> Practical guides, tutorials, and thoughts on emerging technology
-        </li>
-        <li>
-          <strong>Crypto & Web3:</strong> Market analysis, protocol deep-dives, and decentralization
-        </li>
-        <li>
-          <strong>Building in Public:</strong> Project updates, learnings, and transparent progress
-        </li>
-        <li>
-          <strong>Personal Growth:</strong> Productivity, learning strategies, and life systems
-        </li>
-      </ul>
-    </section>
-
-    <section class="space-y-6">
-      <h2>Projects</h2>
-
-      <div class="space-y-6">
-        <div>
-          <h3 class="text-xl font-semibold mb-2" style="color: var(--text-primary);">Personal AI Assistant</h3>
-          <p>
-            Built a custom AI assistant that runs 24/7, handles scheduling, monitors news sources,
-            and helps me stay organized. Uses Claude AI with custom integrations.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="text-xl font-semibold mb-2" style="color: var(--text-primary);">[Your Project Name]</h3>
-          <p>
-            [Description of another project you're working on or have built]
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="space-y-6">
-      <h2>Get In Touch</h2>
-
-      <p>
-        I'm always interested in connecting with people building interesting things. Feel free to
-        reach out!
-      </p>
-
-      <div class="flex gap-6 text-lg">
-        <a href="https://twitter.com/binnsjaison" class="transition-colors" style="color: var(--accent);">
-          Twitter
-        </a>
-        <a href="https://github.com/JaisonBinns" class="transition-colors" style="color: var(--accent);">
-          GitHub
-        </a>
-        <a href="https://tiktok.com/@heyjaison" class="transition-colors" style="color: var(--accent);">
-          TikTok
-        </a>
-        <a href="https://instagram.com/heyjaison" class="transition-colors" style="color: var(--accent);">
-          Instagram
-        </a>
-      </div>
-    </section>
-
-    <section class="space-y-6 pt-8" style="border-top: 1px solid var(--border);">
-      <h2>This Site</h2>
-
-      <p>
-        This site is built with <a href="https://astro.build">Astro</a> and <a href="https://tailwindcss.com">Tailwind CSS</a>.
-        It's hosted on Cloudflare Pages and deploys automatically from GitHub.
+        Right now I'm spending most of my time on AI — specifically how to use it
+        as a real tool, not just a novelty. I built a personal AI assistant that
+        runs 24/7, handles scheduling, monitors news, and keeps me organized.
+        It's one of those projects that started as "let me try this" and turned
+        into something I actually rely on every day.
       </p>
 
       <p>
-        The design is inspired by the clean, minimalist aesthetic of sites like
-        <a href="https://www.benkuhn.net">Ben Kuhn's blog</a>,
+        I also follow crypto pretty closely. Not the speculation side so much as
+        the infrastructure — what's actually being built, what problems DeFi and
+        Web3 are solving that couldn't be solved before.
+      </p>
+    </section>
+
+    <section>
+      <h2>This site</h2>
+
+      <p>
+        Built with <a href="https://astro.build">Astro</a> and
+        <a href="https://tailwindcss.com">Tailwind</a>, hosted on Cloudflare Pages.
+        The design is inspired by
+        <a href="https://www.benkuhn.net">Ben Kuhn</a>,
         <a href="https://www.natebjones.com">Nate B Jones</a>, and
         <a href="https://paulstamatiou.com">Paul Stamatiou</a>.
       </p>
     </section>
+
+    <section class="links-section">
+      <h2>Elsewhere</h2>
+
+      <div class="link-list">
+        <a href="https://twitter.com/binnsjaison">Twitter</a>
+        <a href="https://github.com/JaisonBinns">GitHub</a>
+        <a href="https://tiktok.com/@heyjaison">TikTok</a>
+        <a href="https://instagram.com/heyjaison">Instagram</a>
+        <a href="https://jaisonbinns.substack.com">Substack</a>
+      </div>
+    </section>
   </div>
 </BaseLayout>
+
+<style>
+  .about {
+    max-width: none;
+  }
+
+  .about section {
+    margin-bottom: 3rem;
+  }
+
+  .about section:first-child {
+    padding-top: 1rem;
+  }
+
+  .about h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .about h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .link-list {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .link-list a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+  }
+
+  .link-list a:hover {
+    color: var(--accent-hover);
+  }
+</style>
