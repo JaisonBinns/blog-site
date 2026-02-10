@@ -15,22 +15,22 @@ const { title, description, date, category, readTime = "5 min read" } = Astro.pr
 <BaseLayout title={title} description={description}>
   <article class="prose max-w-none px-4 sm:px-0">
     <!-- Header -->
-    <header class="mb-12 pb-8 border-b border-gray-800 max-w-3xl mx-auto">
-      <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
+    <header class="mb-12 pb-8 max-w-3xl mx-auto" style="border-bottom: 1px solid var(--border);">
+      <div class="flex items-center gap-4 text-sm mb-4" style="color: var(--text-muted);">
         <time>{date}</time>
         <span>•</span>
         <span>{readTime}</span>
         <span>•</span>
-        <span class="px-2 py-0.5 bg-gray-800 text-gray-400 rounded text-xs">
+        <span class="px-2 py-0.5 rounded text-xs" style="background: var(--tag-bg); color: var(--tag-text);">
           {category}
         </span>
       </div>
 
-      <h1 class="text-4xl md:text-5xl font-bold text-gray-100 mb-4 leading-tight">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight" style="color: var(--text-primary);">
         {title}
       </h1>
 
-      <p class="text-xl text-gray-400 leading-relaxed">
+      <p class="text-xl leading-relaxed" style="color: var(--text-body);">
         {description}
       </p>
     </header>
@@ -41,17 +41,18 @@ const { title, description, date, category, readTime = "5 min read" } = Astro.pr
     </div>
 
     <!-- Footer -->
-    <footer class="mt-16 pt-8 border-t border-gray-800 max-w-3xl mx-auto">
+    <footer class="mt-16 pt-8 max-w-3xl mx-auto" style="border-top: 1px solid var(--border);">
       <div class="flex items-center justify-between">
         <a
           href="/writing"
-          class="text-blue-400 hover:text-blue-300 font-medium"
+          class="font-medium transition-colors"
+          style="color: var(--accent);"
         >
           ← Back to all posts
         </a>
 
-        <div class="flex gap-4 text-sm text-gray-500">
-          <a href="https://twitter.com/share?url={Astro.url}" class="hover:text-gray-100">
+        <div class="flex gap-4 text-sm" style="color: var(--text-muted);">
+          <a href="https://twitter.com/share?url={Astro.url}" class="transition-colors" style="color: var(--text-muted);">
             Share on Twitter
           </a>
         </div>

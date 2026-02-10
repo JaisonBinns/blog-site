@@ -20,26 +20,27 @@ const { title, description = "Personal blog" } = Astro.props;
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-gray-950 text-gray-100 font-sans antialiased">
+  <body class="bg-primary text-body font-sans antialiased">
     <div class="max-w-3xl mx-auto px-6 py-8">
       <nav class="mb-16">
         <div class="flex items-center justify-between">
-          <a href="/" class="text-xl font-semibold text-gray-100 hover:text-gray-300 transition-colors">
+          <a href="/" class="text-xl font-semibold transition-colors" style="color: var(--text-primary);">
             Jaison
           </a>
           <div class="flex items-center gap-6">
             <div class="flex gap-8 text-sm">
-              <a href="/" class="text-gray-400 hover:text-gray-100 transition-colors">Home</a>
-              <a href="/writing" class="text-gray-400 hover:text-gray-100 transition-colors">Writing</a>
-              <a href="/about" class="text-gray-400 hover:text-gray-100 transition-colors">About</a>
+              <a href="/" class="transition-colors" style="color: var(--text-muted);">Home</a>
+              <a href="/writing" class="transition-colors" style="color: var(--text-muted);">Writing</a>
+              <a href="/about" class="transition-colors" style="color: var(--text-muted);">About</a>
             </div>
             <a
               href="https://jaisonbinns.substack.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
+              class="px-4 py-2 text-sm font-medium rounded-lg transition-colors"
+              style="background: var(--accent); color: var(--cream);"
             >
               Subscribe
             </a>
@@ -51,14 +52,14 @@ const { title, description = "Personal blog" } = Astro.props;
         <slot />
       </main>
 
-      <footer class="mt-24 pt-8 border-t border-gray-800 text-sm text-gray-500">
+      <footer class="mt-24 pt-8 text-sm" style="border-top: 1px solid var(--border); color: var(--text-muted);">
         <div class="flex justify-between items-center">
           <p>&copy; {new Date().getFullYear()} Jaison. All rights reserved.</p>
           <div class="flex gap-6">
-            <a href="https://twitter.com/binnsjaison" class="hover:text-gray-100 transition-colors">Twitter</a>
-            <a href="https://github.com/JaisonBinns" class="hover:text-gray-100 transition-colors">GitHub</a>
-            <a href="https://tiktok.com/@heyjaison" class="hover:text-gray-100 transition-colors">TikTok</a>
-            <a href="https://instagram.com/heyjaison" class="hover:text-gray-100 transition-colors">Instagram</a>
+            <a href="https://twitter.com/binnsjaison" class="transition-colors" style="color: var(--text-muted);">Twitter</a>
+            <a href="https://github.com/JaisonBinns" class="transition-colors" style="color: var(--text-muted);">GitHub</a>
+            <a href="https://tiktok.com/@heyjaison" class="transition-colors" style="color: var(--text-muted);">TikTok</a>
+            <a href="https://instagram.com/heyjaison" class="transition-colors" style="color: var(--text-muted);">Instagram</a>
           </div>
         </div>
       </footer>
@@ -67,7 +68,41 @@ const { title, description = "Personal blog" } = Astro.props;
 </html>
 
 <style is:global>
+  :root {
+    /* Hojicha & Matcha Palette */
+    --cream: #D4BFA0;
+    --warm-tan: #C4A882;
+    --roast: #A8876A;
+    --sage: #B5A87A;
+    --deep-matcha: #2D5A27;
+    --matcha-bright: #3B7A33;
+    --matcha-dark: #1E4D2B;
+    --matcha-rich: #2E6B34;
+
+    /* Dark Theme Variables */
+    --bg-primary: #1A1612;
+    --bg-secondary: #2A231C;
+    --bg-card: #2A231C;
+    --text-primary: var(--cream);
+    --text-body: #C9B99A;
+    --text-muted: var(--sage);
+    --accent: var(--matcha-bright);
+    --accent-hover: #4A9340;
+    --border: rgba(212, 191, 160, 0.12);
+    --border-strong: var(--roast);
+    --tag-bg: rgba(59, 122, 51, 0.15);
+    --tag-text: var(--matcha-bright);
+    --shadow: rgba(0, 0, 0, 0.3);
+  }
+
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
   }
 </style>
