@@ -1,0 +1,183 @@
+---
+import BlogPost from '../../layouts/BlogPost.astro';
+---
+
+<BlogPost
+  title="Running an AI Assistant on a Mac Mini: NanoClaw vs OpenClaw"
+  description="What I learned trying to run AI assistants on my home server instead of a VPS."
+  date="Feb 16, 2026"
+  category="Tech"
+  readTime="6 min read"
+>
+  <p>
+    So I bought a Mac mini to use as a home server. Not because I needed one, but because I
+    <em>wanted</em> one. You know how it goes—you convince yourself it's practical, then spend
+    the next few weeks trying to justify the purchase by cramming every possible service onto it.
+  </p>
+
+  <p>
+    One of those services? A 24/7 AI assistant. I'd been playing with NanoClaw and OpenClaw,
+    and figured: why pay for a VPS when I've got perfectly good hardware sitting under my desk?
+  </p>
+
+  <h2>The Great Home Server Experiment</h2>
+
+  <p>
+    Here's the thing about home servers: they sound great in theory. Always on, physically
+    accessible, no monthly costs, complete control. In practice? Well, it depends what you're
+    running.
+  </p>
+
+  <p>
+    I started with OpenClaw—the more robust, "enterprise-ready" option. Multiple containers,
+    orchestration, the works. It's designed to scale, to handle complex workflows, to be this
+    always-on cloud-native thing.
+  </p>
+
+  <p>And that's exactly the problem.</p>
+
+  <h2>OpenClaw on a Home Server: Not It</h2>
+
+  <p>
+    OpenClaw wants to live in the cloud. It <em>needs</em> to live in the cloud. Here's why
+    running it on a home server is a bad idea:
+  </p>
+
+  <h3>1. Your IP Address Changes</h3>
+
+  <p>
+    Unless you're paying for a static IP from your ISP (and why would you?), your home IP
+    changes periodically. Good luck maintaining webhooks, OAuth callbacks, or any external
+    integrations when your endpoint keeps shifting.
+  </p>
+
+  <h3>2. Port Forwarding Hell</h3>
+
+  <p>
+    Want to receive messages from the outside world? Better get comfortable with your router's
+    admin panel. And hope your ISP doesn't block the ports you need. And pray your router
+    firmware doesn't randomly reset your rules.
+  </p>
+
+  <h3>3. Uptime Depends on Your Internet</h3>
+
+  <p>
+    Internet goes down? Your assistant goes dark. Router reboots? Down. Power flickers? Down.
+    Cat unplugs the ethernet cable? Down. (Don't ask how I know.)
+  </p>
+
+  <h3>4. It's Just... Overkill</h3>
+
+  <p>
+    OpenClaw is built for production environments with multiple users, load balancing,
+    redundancy. Running that on a Mac mini in my office is like using a semi-truck to pick
+    up groceries. Technically it works, but why?
+  </p>
+
+  <h2>NanoClaw on a Home Server: There's Something Here</h2>
+
+  <p>
+    But NanoClaw? That's a different story.
+  </p>
+
+  <p>
+    NanoClaw is lightweight. Personal. It's designed for <em>one person</em>, not a team.
+    It runs in simple containers, doesn't need complex orchestration, and doesn't fight you
+    when you want to keep it local.
+  </p>
+
+  <h3>Why It Actually Works</h3>
+
+  <p>
+    <strong>1. Privacy First</strong> - All your conversations, files, and data stay on
+    hardware you control. No cloud provider has access. Your AI assistant's memory lives
+    on your desk, not in someone else's data center.
+  </p>
+
+  <p>
+    <strong>2. No Monthly Costs</strong> - Once you've got the Mac mini (or any home server),
+    there's no VPS bill. No surprise charges when you exceed your usage tier. Just electricity,
+    which is negligible for a Mac mini.
+  </p>
+
+  <p>
+    <strong>3. Direct File Access</strong> - Want your AI to summarize notes from your local
+    filesystem? Process documents from your NAS? Edit code in your development folders?
+    It's all right there. No syncing, no uploads, no network latency.
+  </p>
+
+  <p>
+    <strong>4. Tinkering Freedom</strong> - You can restart it, break it, rebuild it, and
+    mess with it as much as you want without worrying about downtime affecting other users
+    (because there are no other users—it's just you).
+  </p>
+
+  <h3>The Hybrid Approach</h3>
+
+  <p>
+    Here's what I ended up with: NanoClaw runs on the Mac mini for everything local and
+    personal. It monitors my files, manages my notes, helps with coding, schedules tasks.
+  </p>
+
+  <p>
+    For anything that needs to be internet-facing—like receiving WhatsApp messages or
+    running scheduled web scraping—I use a cheap VPS as a lightweight relay. The VPS handles
+    incoming requests and forwards them to the home server via a persistent connection.
+  </p>
+
+  <p>Best of both worlds.</p>
+
+  <h2>What I Learned</h2>
+
+  <p>
+    <strong>Home servers are great for personal services.</strong> Things you use yourself,
+    things that benefit from local access, things where you value privacy over convenience.
+  </p>
+
+  <p>
+    <strong>But production services belong in the cloud.</strong> If it needs to be reliable
+    24/7, serve multiple users, or respond to webhooks from external services, put it on a VPS.
+  </p>
+
+  <p>
+    <strong>NanoClaw hits the sweet spot.</strong> It's personal enough to benefit from being
+    local, but flexible enough to work with cloud services when needed.
+  </p>
+
+  <h2>The Mac Mini as a Home Server</h2>
+
+  <p>
+    People sleep on the Mac mini as a server. It's quiet, power-efficient, and macOS actually
+    makes a decent server OS if you're not trying to run enterprise workloads. Plus, it's a
+    first-class environment for development—you can drop into the desktop GUI anytime you
+    need to debug something visually.
+  </p>
+
+  <p>
+    Do I <em>need</em> a home server? Absolutely not. Could I do all of this on a VPS? Sure.
+  </p>
+
+  <p>
+    But there's something satisfying about having an AI assistant running on hardware you own,
+    in a room you can walk into, doing exactly what you want without asking permission from
+    a cloud provider.
+  </p>
+
+  <p>
+    That's the vibe. And honestly? That's enough reason for me.
+  </p>
+
+  <h2>The Verdict</h2>
+
+  <ul>
+    <li><strong>OpenClaw on home server:</strong> ❌ Just use a VPS</li>
+    <li><strong>NanoClaw on home server:</strong> ✅ Actually pretty great</li>
+    <li><strong>Mac mini as a home server:</strong> ✅ Underrated</li>
+    <li><strong>Justifying hardware purchases:</strong> ✅ I'm getting better at this</li>
+  </ul>
+
+  <p>
+    If you're thinking about running your own AI assistant and you've got a spare machine
+    lying around, give NanoClaw a shot. It might just be the perfect fit.
+  </p>
+</BlogPost>
